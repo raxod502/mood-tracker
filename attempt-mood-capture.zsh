@@ -3,6 +3,9 @@
 set -e
 cd $0:A:h
 
+# Homebrew installation directory is not added to PATH by cron.
+path+=(/usr/local/bin)
+
 if ! (( $+commands[terminal-notifier] )); then
     # Required dependency: brew install terminal-notifier
     cat display-error-notification.applescript |
