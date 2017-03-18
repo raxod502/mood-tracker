@@ -30,6 +30,6 @@ else
         cat capture-mood.applescript |
             sed "s/<PWD>/$escaped_pwd/" |
             sed "s/<TIMESTAMP>/$(date +%s)/" |
-            osascript
+            osascript > /dev/null
     fi
 fi
