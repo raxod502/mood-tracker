@@ -18,6 +18,3 @@ else
     echo "No moods saved!"
     exit 1
 fi
-
-# FIXME: record times
-# FIXME: switch back to original application?
