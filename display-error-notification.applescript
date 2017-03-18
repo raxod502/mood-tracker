@@ -1,1 +1,1 @@
-display notification "Please install <DEPENDENCY> first."
+display notification "Error: <DEPENDENCY> not installed."
