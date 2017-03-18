@@ -5,7 +5,6 @@ cd $0:A:h
 
 if [[ -s moods.log ]]; then
     tail -n 1 moods.log
-    local response
     read -q "response?Delete? [y/N] "
     if [[ $response == y ]]; then
         sed -i .bak '$d' moods.log

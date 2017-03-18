@@ -8,18 +8,18 @@ cd $0:A:h
 
 # This number should be incremented every time the format of entries
 # written to the log file changes.
-local format_version=1
+format_version=1
 
 # String to be printed between sections of I/O.
-local separator="----------------------------------------"
+separator="----------------------------------------"
 
 # Timestamp for notification was displayed (optional, provided as
 # first argument by attempt-mood-capture.zsh via
 # capture-mood.applescript).
-local notification_timestamp=$1
+notification_timestamp=$1
 
 # Timestamp for beginning of mood capture.
-local capture_start_timestamp=$(date +%s)
+capture_start_timestamp=$(date +%s)
 
 # Display levels of mood.
 echo "(1) Terrible"
@@ -34,7 +34,6 @@ echo $separator
 # Loop until a valid mood is provided.
 while true; do
     # Read only one keypress.
-    local mood
     read -k "mood?How are you feeling? "
     # Move to a new line after keypress is accepted.
     echo
@@ -46,13 +45,13 @@ done
 
 # Optional comment.
 echo $separator
-local comment=
+comment=
 vared -e -p "Comment: " -c comment
 # Escape colons and backslashes with an additional backslash.
 comment=$(echo $comment | sed 's/[\\:]/\\&/')
 
 # Timestamp for end of mood capture.
-local capture_end_timestamp=$(date +%s)
+capture_end_timestamp=$(date +%s)
 
 # The log file is line-oriented, with the fields in each line
 # delimited by colons. (Embedded colons and backslashes are

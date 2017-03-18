@@ -18,11 +18,11 @@ elif ! [[ -e /Applications/iTerm.app ]]; then
         osascript
 else
     # Show a notification.
-    local result=$(terminal-notifier -message "Capture your mood?" -actions Capture)
+    result=$(terminal-notifier -message "Capture your mood?" -actions Capture)
     # Proceed if the user clicked on the notification box or the
     # Capture button.
     if [[ $result == @CONTENTCLICKED || $result == Capture ]]; then
-        local escaped_pwd=$(
+        escaped_pwd=$(
             echo $PWD |
                 sed 's/"/\"/' | # escape for zsh double quotes
                 sed 's/"/\"/' | # escape for AppleScript double quotes
