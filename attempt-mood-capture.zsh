@@ -18,10 +18,10 @@ elif ! [[ -e /Applications/iTerm.app ]]; then
         osascript
 else
     # Show a notification.
-    result=$(terminal-notifier
-             -message "Capture your mood?"
-             -actions Capture
-             -timeout 1800)
+    result=$(terminal-notifier \
+                 -message "Capture your mood?" \
+                 -actions Capture \
+                 -timeout 1800)
     # Proceed if the user clicked on the notification box or the
     # Capture button.
     if [[ $result == @CONTENTCLICKED || $result == Capture ]]; then
