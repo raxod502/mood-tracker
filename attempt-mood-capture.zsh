@@ -21,10 +21,10 @@ else
     result=$(terminal-notifier \
                  -message "Capture your mood?" \
                  -actions Capture \
-                 -timeout 1800)
+                 -timeout 1800 2>&1)
     # Proceed if the user clicked on the notification box or the
     # Capture button.
-    if [[ $result == @CONTENTCLICKED || $result == Capture ]]; then
+    if [[ $result == *@CONTENTCLICKED || $result == *@Capture ]]; then
         escaped_pwd=$(
             echo $PWD |
                 sed 's/"/\"/' | # escape for zsh double quotes
